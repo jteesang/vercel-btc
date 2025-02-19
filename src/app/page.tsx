@@ -48,7 +48,15 @@ export default function Home() {
   )
 }
 
-function CardComponent({ title, content, icon: Icon, color, index, mounted, image }) {
+function CardComponent({ title, content, icon: Icon, color, index, mounted, image }: {
+  title: any, 
+  content: any, 
+  icon: any, 
+  color: any, 
+  index: any, 
+  mounted: any, 
+  image?: any  // Added ? to make image optional
+}) {
   const positions = ["top-0 left-0", "top-0 right-0", "bottom-0 left-0", "bottom-1/4 right-0"]
 
   const sizes = [
@@ -87,7 +95,7 @@ function CardComponent({ title, content, icon: Icon, color, index, mounted, imag
   )
 }
 
-function ProjectsCard({ mounted }) {
+function ProjectsCard({mounted} : {mounted:any}) {
   return (
     <div
       className={`absolute top-1/4 left-1/3 bg-gradient-to-br from-purple-200 to-purple-100 rounded-lg shadow-lg p-6 w-96 rotate-1 transition-all duration-500 ease-out ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
@@ -109,7 +117,7 @@ function ProjectsCard({ mounted }) {
   )
 }
 
-function ContactCard({ mounted }) {
+function ContactCard({mounted} : {mounted:any}) {
   return (
     <div
       className={`absolute bottom-0 right-1/4 bg-gradient-to-br from-gray-200 to-gray-100 rounded-lg shadow-lg p-6 w-64 -rotate-1 transition-all duration-500 ease-out ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
